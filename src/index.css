@@ -1,0 +1,13 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .blob { animation: none !important; } }
+@layer base { body { @apply bg-slate-50 text-slate-700 antialiased dark:bg-[#07070f] dark:text-slate-300; } }
+@layer components {
+  .glass { @apply rounded-2xl border border-slate-200/80 bg-white/70 shadow-lg shadow-slate-200/40 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:shadow-none; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400; }
+  .btn-primary { @apply btn bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/30 hover:-translate-y-0.5 hover:shadow-indigo-500/50; }
+  .btn-ghost { @apply btn border border-slate-300 hover:-translate-y-0.5 hover:border-indigo-400 hover:text-indigo-500 dark:border-white/15; }
+  .grad-text { @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-sky-400 bg-clip-text text-transparent; }
+}
+.blob { animation: float 14s ease-in-out infinite alternate; }
+@keyframes float { to { transform: translate(40px, -50px) scale(1.15); } }
